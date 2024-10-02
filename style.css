@@ -2,6 +2,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-content: space-around;
     height: 100%;
     gap: 20px;
+    font-family: 'Gill Sans', sans-serif;
+    background-color: rgb(21 20 25);
+   
+        
+}
+
+h1 {
+    font-weight: inherit;
+    font-size: 80px;
+    line-height: 91px;
+    font-style: italic;
+    color: rgb(251, 249, 255);
+}
+
+.header__title {
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 140%;
+    white-space: nowrap;
+    color: rgb(251, 249, 255);;
+
 }
