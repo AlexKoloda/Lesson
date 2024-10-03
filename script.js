@@ -8,7 +8,7 @@
 Измените значение свойства name на Pete.
 Удалите свойство name из объекта. */
 
-/*   let user = {};  
+/*   let user = {};
   user.name  = 'Jhon';
   user.surname = 'Smith';
   user.name = 'Pete';
@@ -25,7 +25,7 @@
   alert( isEmpty(schedule) ); // false
 
   function isEmpty(obj) {
-    for (let prop in obj) {     
+    for (let prop in obj) {
       return false;
     }
       return true;
@@ -46,7 +46,7 @@
 
     for (prop in obj) {
         result += obj[prop];
-    }  
+    }
     return result;
   }
 
@@ -62,15 +62,15 @@
   };
 
   function multiplyNumeric(obj) {
-    
+
     for (prop in obj) {
        if (typeof obj[prop] == 'number')
         obj[prop] *= 2;
     }
   };
-    
+
   multiplyNumeric(menu); */
-  
+
 /* !-- Создайте объект calculator (калькулятор) с тремя методами:
 
 read() (читать) запрашивает два значения и сохраняет их как свойства объекта с именами a и b.
@@ -108,18 +108,18 @@ mul() возвращает произведение этих свойств. */
 
 
 /*   function Calculator() {
-    this.read = function() { 
+    this.read = function() {
         this.a = +prompt('a?', '');
         this.b = +prompt('b?', '');
     }
-    this.sum = function () { 
+    this.sum = function () {
         return this.a + this.b
     }
     this.mul = function () {
         return this.a * this.b
     }
   }
-  
+
   let calculator = new Calculator();
   calculator.read();
 
@@ -130,15 +130,15 @@ mul() возвращает произведение этих свойств. */
 /* Создайте функцию-конструктор Accumulator(startingValue).
 
 Объект, который она создаёт, должен уметь следующее:
-  
+
 Хранить «текущее значение» в свойстве value. Начальное значение устанавливается в аргументе конструктора startingValue.
 Метод read() должен использовать prompt для считывания нового числа и прибавления его к value. */
-/* 
+/*
   function Accumulator(startingValue) {
 
     this.value = startingValue;
 
-    this.read = function() { 
+    this.read = function() {
       this.value += +prompt('Сколько нужно добавить?', '0');
    };
 }
@@ -166,16 +166,16 @@ mul() возвращает произведение этих свойств. */
 
 
 
- 
+
 function readNumber() {
-    
+
     if ( number == '' || number == null) {
         alert ('Отмена');
-     }    
- 
+     }
+
     while (!isFinite(number)) {
     number = prompt ('Введите число', '');
- }  
+ }
 }
 
 readNumber(); */
@@ -186,7 +186,7 @@ readNumber(); */
 
 /* function ucFirst(str) {
   return (str.length > 0) ? str[0].toUpperCase() + str.slice(1) : '';
-} 
+}
  */
 
 /* !-- Напишите функцию checkSpam(str), возвращающую true, если str содержит 'viagra' или 'XXX', а иначе false.
@@ -194,10 +194,10 @@ readNumber(); */
 Функция должна быть нечувствительна к регистру: */
 
 /*   function checkSpam(str) {
-    return str.toLowerCase().includes('viagra') || str.toLowerCase().includes('xxx'); 
+    return str.toLowerCase().includes('viagra') || str.toLowerCase().includes('xxx');
   } */
 
-/* Создайте функцию truncate(str, maxlength), которая проверяет длину строки str и, 
+/* Создайте функцию truncate(str, maxlength), которая проверяет длину строки str и,
 если она превосходит maxlength, заменяет конец str на "…", так, чтобы её длина стала равна maxlength. */
 
 
@@ -205,7 +205,7 @@ readNumber(); */
       return ( str.length > maxlength ) ? str.substr(0,[maxlength - 1]) + "…" : str;
      } */
 
-/* Создайте функцию extractCurrencyValue(str), которая будет из такой строки выделять числовое значение и возвращать его.   */   
+/* Создайте функцию extractCurrencyValue(str), которая будет из такой строки выделять числовое значение и возвращать его.   */
 
 /* function extractCurrencyValue(str) {
     return Number(str.slice(1))
@@ -224,10 +224,10 @@ readNumber(); */
 
 /* let styles = ['Джаз', 'Блюз',]
 
-styles.push('Рок-н-Ролл'); 
+styles.push('Рок-н-Ролл');
 sstyles[Math.floor((styles.length - 1) / 2)] = "Классика";
-alert( styles.shift() ); 
-styles.unshift('Рэп','Регги') 
+alert( styles.shift() );
+styles.unshift('Рэп','Регги')
 
  */
 
@@ -259,3 +259,472 @@ styles.unshift('Рэп','Регги')
 }
 
 sumInput() */
+
+/* !-- Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString». */
+
+
+/*   function camelize(str) {
+
+    return str.split('-').map (( word, index ) => {
+    return index === 0 ? word : word[0].toUpperCase() + word.slice(1)
+    }).join('')
+
+  }
+  camelize("background-color"); */
+
+/* Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет элементы со значениями больше или равными a и меньше или равными b и
+возвращает результат в виде массива.
+
+Функция должна возвращать новый массив и не изменять исходный. */
+/* let arr = [5, 3, 8, 1];
+let filtered = filterRange(arr, 1, 4);
+
+
+function filterRange(arr, a, b) {
+    let newArr = [];
+
+    arr.forEach(element => {
+      if( element >= a && element <= b) {
+        newArr.push(element);
+      }
+    });
+
+    return newArr;
+}
+ */
+
+/* Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr и удаляет из него все значения кроме тех, которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+
+Функция должна изменять принимаемый массив и ничего не возвращать. */
+
+/* let arr = [5, 3, 8, 1];
+
+
+filterRangeInPlace(arr, 1, 4);
+
+function filterRangeInPlace (arr, a, b) {
+
+for ( let element of arr ) {
+  if ( !(element <= b && element >= a) ) {
+
+    const index = arr.indexOf(element);
+
+    arr.splice(index, 1)
+}
+}
+}
+console.log(arr); */
+
+/* !-- Сортировать в порядке по убыванию
+ */
+/*
+let arr = [5, 2, 1, -10, 8];
+
+arr.sort().reverse();
+
+console.log( arr ); // 8, 5, 2, 1, -10 */
+
+/* !-- У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
+
+Создайте функцию copySorted(arr), которая будет возвращать такую копию. */
+
+
+/* let arr = ["HTML", "JavaScript", "CSS"];
+let sorted = copySorted(arr);
+
+
+function copySorted(arr) {
+  return arr.slice().sort();
+}
+
+alert( sorted ); // CSS, HTML, JavaScript
+alert( arr ); // HTML, JavaScript, CSS (без изменений) */
+
+/* !-- У вас есть массив объектов user, и в каждом из них есть user.name. Напишите код, который преобразует их в массив имён. */
+
+/* let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let users = [ vasya, petya, masha ];
+
+let names = users.map(user => user.name);
+
+alert( names ); // Вася, Петя, Маша */
+
+
+
+/* ! --- У вас есть массив объектов user, и у каждого из объектов есть name, surname и id.
+
+Напишите код, который создаст ещё один массив объектов с параметрами id и fullName, где fullName – состоит из name и surname. */
+
+/* let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+let petya = { name: "Петя", surname: "Иванов", id: 2 };
+let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+let users = [ vasya, petya, masha ];
+
+let usersMapped = users.map( user => ({
+  fullName: user.name + ' ' + user.surname,
+  id: user.id,
+}));
+
+alert( usersMapped[0].id ) // 1
+alert( usersMapped[0].fullName ) // Вася Пупкин */
+
+
+/* Напишите функцию getAverageAge(users), которая принимает массив объектов со свойством age и возвращает средний возраст. */
+
+/* let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 29 };
+
+let arr = [ vasya, petya, masha ];
+
+function getAverageAge(arr) {
+return arr.reduce((sum, user, ) => (sum + user.age),0) / arr.length;
+}
+
+alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28 */
+
+
+/* ! -- Напишите функцию unique(arr), которая возвращает массив, содержащий только уникальные элементы arr. */
+
+/* let strings = ["кришна", "кришна", "харе", "харе", \\ Решение только с использованием методов массива
+  "харе", "харе", "кришна", "кришна", ":-O"
+];
+
+function unique(arr) {
+
+  let resaultArr = [];
+
+  for (let string of arr) {
+
+    if (!resaultArr.includes(string,0)) {
+       resaultArr.push(string)
+    }
+  }
+
+  return resaultArr;
+}
+
+
+alert(unique(strings)); // кришна, харе, :-O */
+
+
+
+
+/* function unique(arr) { // Решение коллег интернов
+let newArr = {};
+
+arr.forEach(element => {
+newArr[element]
+if ( !newArr[element]) {
+  newArr[element] = element;
+}
+});
+Object.entries(newArr).flat();
+}
+
+alert( unique(strings) ); // кришна, харе, :-O
+ */
+
+/* Создайте функцию groupById(arr), которая создаст из него объект с id в качестве ключа и элементами массива в качестве значений. */
+
+/* let users = [
+  {id: 'john', name: "John Smith", age: 20},
+  {id: 'ann', name: "Ann Smith", age: 24},
+  {id: 'pete', name: "Pete Peterson", age: 31},
+];
+
+
+function groupById(arr) {
+
+  return arr.reduce(function (obj, user){
+      obj[user.id] = user;
+      return obj;
+  },{})
+}
+
+let usersById = groupById(users); */
+
+
+// 5.9 OBJECT.KEYS, VALUES, ENTRIES //
+
+/* !-- Напишите функцию sumSalaries(salaries), которая возвращает сумму всех зарплат с помощью метода Object.values и цикла for..of. */
+
+/* let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+
+function sumSalaries(salaries) {
+  let result = 0;
+
+  for ( let salary of Object.values(salaries)) {
+    result += salary;
+  }
+
+  return result;
+
+}
+alert( sumSalaries(salaries) ); // 650 */
+
+/* !-- Напишите функцию count(obj), которая возвращает количество свойств объекта: */
+
+/* let user = {
+  name: 'John',
+  age: 30
+};
+
+function count(obj) {
+  let result = 0;
+
+  for ( let key of Object.keys(obj)) { //  Мое решение
+    result++;
+  }
+
+  return result;
+}
+
+alert( count(user) ); // 2 */
+
+/* function count(obj) {
+  return Object.keys(obj).length;  // Решение из учебника
+} */
+
+
+
+// 5.10 ДЕСТРУКТУРИРУЮЩЕЕ ПРИСВАИВАНИЕ //
+
+/* !-- Напишите деструктурирующее присваивание, которое: */
+
+/* let user = { name: "John", years: 30 };
+
+let { name, years: age, isAdmin = false} = user;
+
+alert( name ); // John
+alert( age ); // 30
+alert( isAdmin ); // false
+ */
+
+/* !-- Создайте функцию topSalary(salaries), которая возвращает имя самого высокооплачиваемого сотрудника. */
+
+/* let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+  };
+
+  function topSalary(salaries) {
+    let maxSalary = 0;
+    let maxName = null;
+
+    for ( let [name, salary] of Object.entries(salaries)) {
+        if (maxSalary < salary) {
+            maxSalary = salary;
+            maxName = name;
+        }
+    }
+    return maxName;
+  }
+
+  topSalary(); */
+
+// 5.11 ДАТА И ВРЕМЯ //
+
+/* !--  Создайте объект Date для даты: 20 февраля 2012 года, 3 часа 12 минут. Временная зона – местная. */
+
+/* let date = new Date (2021, 1, 20, 3, 12);
+alert (date); */
+
+/* !-- Напишите функцию getWeekDay(date), показывающую день недели в коротком формате: «ПН», «ВТ», «СР», «ЧТ», «ПТ», «СБ», «ВС». */
+
+/* function getWeekDay(date) {
+    let days = [
+     "ВС",
+     "ПН",
+     "ВТ",
+     "СР",
+     "ЧТ",
+     "ПТ",
+     "СБ",
+    ]
+    return days[date.getDay()];
+ } */
+
+/* В Европейских странах неделя начинается с понедельника (день номер 1), затем идёт вторник (номер 2) и так до воскресенья (номер 7).
+Напишите функцию getLocalDay(date), которая возвращает «европейский» день недели для даты date. */
+
+
+/* function getLocalDay(date) {
+
+let day = date.getDay();
+
+  if (day == 0) { /
+    day = 7;
+  }
+
+  return day;
+} */
+
+// 5.12 ФОРМАТ JSON, МЕТОД TOJSON //
+
+/* !-- Преобразуйте user в JSON, затем прочитайте этот JSON в другую переменную. */
+
+/* let user = {
+  name: "Василий Иванович",
+  age: 35
+};
+
+
+JSON.stringify(user)
+
+let user2 = JSON.parse(JSON.stringify(user)); */
+
+
+// 6.1 РЕКУРСИЯ И СТЕК //
+
+/* Напишите функцию sumTo(n), которая вычисляет сумму чисел 1 + 2 + ... + n. */
+/* 
+Сделайте три варианта решения:
+
+С использованием цикла.
+Через рекурсию, т.к. sumTo(n) = n + sumTo(n-1) for n > 1.
+С использованием формулы арифметической прогрессии.
+ */
+
+/* function sumTo(n) { 
+  let res = 0;
+  for ( let i=0; i<=n; i++) { // Решение с использованием цикла
+    res +=i;
+  }
+  return res;
+ }
+*/
+
+/* alert( sumTo(100) ); // 5050 */
+
+/* function sumTo(n) {    // Решение с использованием рекусрии
+  if (n === 1) {
+    return 1;
+  } else {
+    return n + sumTo(n-1)
+  }
+} */
+
+/*   function sumTo(n) {
+    return n * (n + 1) / 2;  // Решение с использованем формулы.
+  }
+   */
+
+
+
+/* ! -- Задача – написать функцию factorial(n), которая возвращает n!, используя рекурсию. */
+
+
+/* function factorial(n) {
+
+  if (n === 1 ) {
+    return 1;
+  } else {
+    return n * factorial(n-1);
+  }
+
+}
+alert( factorial(5) ); // 120 */
+
+/* !-- Напишите функцию fib(n) которая возвращает n-е число Фибоначчи. */
+
+/* function fib(n) {
+ 
+  if ( n <= 1 ) {
+    return n;
+  } else {
+    return fib(n - 1) + fib(n - 2)
+  }
+}
+
+
+alert(fib(3)); // 2
+alert(fib(7)); // 13
+alert(fib(77)); // 5527939700884757 */
+
+
+
+/* !-- Напишите функцию sum, которая работает таким образом: sum(a)(b) = a+b.*/
+
+/* function sum(a) {
+ 
+return  function(b) {
+  return a + b;
+ }
+
+}
+
+
+console.log(sum(1)(2)); */
+
+/* function makeArmy() {
+  let shooters = [];
+
+  let i = 0;
+  while (i < 10) {
+    let j = i;
+    let shooter = function() { // функция shooter
+      alert(i) // должна выводить порядковый номер
+    };
+    shooters.push(shooter); // и добавлять стрелка в массив
+    i++;
+  }
+
+  // ...а в конце вернуть массив из всех стрелков
+  return shooters;
+}
+
+let army = makeArmy();
+
+// все стрелки выводят 10 вместо их порядковых номеров (0, 1, 2, 3...)
+army[0](); // 10 от стрелка с порядковым номером 0
+army[1](); // 10 от стрелка с порядковым номером 1
+army[2](); // 10 ...и т.д. */
+
+
+// 6.8 ПЛАНИРОВАНИЕ: SETTIMEOUT И SETINTERVAL //
+
+/* Напишите функцию printNumbers(from, to), которая выводит число каждую секунду, начиная от from и заканчивая to.
+
+Сделайте два варианта решения.
+
+Используя setInterval.
+Используя рекурсивный setTimeout.
+ */
+
+/* function printNumbers(from, to) {
+  let current = from;
+
+  let timerId = setInterval(function() {
+    alert(current);
+    if (current == to) {
+      clearInterval(timerId);
+    }
+    current++;
+  }, 1000);
+}
+ */
+/*  printNumbers(1,4)
+
+ function printNumbers(from, to) {
+  let current = from;
+
+  setTimeout ( function go(){
+    alert(current);
+    if (current < to) {
+      setTimeout(go, 1000);
+    } current++; 
+  }) 
+ } */
+
+  
