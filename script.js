@@ -260,6 +260,33 @@ styles.unshift('Рэп','Регги')
 
 sumInput() */
 
+/* Задача: найти непрерывный подмассив в arr, сумма элементов в котором максимальна.
+
+Функция getMaxSubSum(arr) должна возвращать эту сумму. */
+
+
+/* function getMaxSubSum(arr) {
+  let currentKey;
+
+  for ( key in arr) {
+    currentKey = key; 
+    key++;
+    if (currentKey === key) {
+      console.log(key);
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+console.log( getMaxSubSum([-1, 2, 3, -9]) ); // 5 */
+
 /* !-- Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString». */
 
 
@@ -726,5 +753,182 @@ army[2](); // 10 ...и т.д. */
     } current++; 
   }) 
  } */
+
+/* Создайте класс FormatError, который наследует от встроенного класса SyntaxError.
+
+Класс должен поддерживать свойства message, name и stack. */
+
+/* 
+
+class FormatError extends SyntaxError {
+  constructor(message) {
+    super(message);
+    this.name = 'Format name';
+  }
+
+}
+let err = new FormatError("ошибка форматирования");
+
+alert( err.message ); // ошибка форматирования
+alert( err.name ); // FormatError
+alert( err.stack ); // stack
+
+alert( err instanceof FormatError ); // true
+alert( err instanceof SyntaxError ); // true (потому что наследует от SyntaxError) */
+
+
+// 11.2 ПРОМИСЫ // 
+
+
+/* !-- Функция delay(ms) должна возвращать промис, который перейдёт в состояние «выполнен» через ms миллисекунд, так чтобы мы могли добавить к нему .then: */
+
+/* function delay(ms) {
+ 
+  let timer = new Promise ( resolve =>  {
+  return setTimeout(()=> resolve, ms)
+  },) 
+  return timer;
+}
+
+delay(3000).then(() => alert('выполнилось через 3 секунды')); */
+ 
+/* !-- Переписать на промисы функуцию  */
+
+
+/* function go() {
+  showCircle(150, 150, 100, div => {
+    div.classList.add('message-ball');
+    div.append("Привет, мир!");
+  });
+}
+
+function showCircle(cx, cy, radius) {
+
+  let div = document.createElement('div');
+  div.style.width = 0;
+  div.style.height = 0;
+  div.style.left = cx + 'px';
+  div.style.top = cy + 'px';
+  div.className = 'circle';
+  document.body.append(div);
+
+  return new Promise (resolve => {
+    setTimeout(() => {
+    div.style.width = radius * 2 + 'px';
+    div.style.height = radius * 2 + 'px';
+    
+
+    div.addEventListener('transitionend', function handler() {
+      div.removeEventListener('transitionend', handler);
+      callback(div);
+    });
+  }, 0);
+})
+}
+
+
+showCircle(150, 150, 100).then(div => {
+  div.classList.add('message-ball');
+  div.append("Hello, world!");
+});
+ */
+
+
+/* async function f() {
+  return 1;
+}
+
+let res = f();
+console.log(typeof(res));
+ */
+
+/* ! -- Перепишите один из примеров раздела Цепочка промисов, используя async/await вместо .then/catch: */
+/* 
+function loadJson(url) {     // Исходный код
+  return fetch(url)
+    .then(response => {
+      if (response.status == 200) {
+        return response.json();
+      } else {
+        throw new Error(response.status);
+      }
+    })
+}
+
+loadJson('no-such-user.json') // (3)
+  .catch(alert); / */
+
+/*   async function loadJson(url) {
+    let response = await fetch(url);
+
+    if (response.status == 200) {
+    let json = await response.json();
+        } else {
+          throw new Error(response.status);
+        }
+      
+  }
+  
+  loadJson('no-such-user.json') // (3)
+    .catch(alert); // Error: 404 */
+  
+
+//    14.1 PROXY // 
+
+/* !-- Напишите функцию wrap(target), которая берёт объект target и возвращает прокси, добавляющий в него этот аспект функциональности. */
+
+/* let user = {
+  name: "John"
+};
+
+function wrap(target) {
+  return new Proxy(target, {
+     get(target, prop, receiver) {
+      if ( prop in target) {
+        return Reflect.get(target, prop, receiver );
+      } else {
+        throw new ReferenceError(`Свойство не существует: ${prop}`)
+      }
+     } 
+  });
+}
+
+user = wrap(user);
+
+alert(user.name); // John
+alert(user.age); // Ошибка: такого свойства не существует */
+
+
+/* function switchItUp(number){
+  let words = [
+    'One',
+    'Two',
+    'Three',
+    'Four',
+    'Five',
+    'Six',
+    'Seven',
+    'Eight',
+    'Nine',
+    'Ten',  
+  ]
+    
+    return words[number-1];
+    
+  }
+
+  console.log(switchItUp(5),); */
+
+/* 
+  function invert(array) {
+    let invertArray = []; 
+    for ( key of array) {
+    invertArray.push(-key);
+    }
+    return invertArray;
+  }
+
+  console.log(invert([1,2,3,4,5])); */
+
 
   
