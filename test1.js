@@ -4,42 +4,46 @@
  Функция должна вернуть то же самое что приняла аргументом, но обновив все ссылки на всех уровнях (все ссылки на объекты или массивы должны быть новые). 
  Функция не должна использовать хак с JSON.parse(JSON.stringify(data)). */
 
-/*   let intern = {
+ let intern = {
 
     name: 'Alex',
     age: 32,
     skills : {
         html: true,
         js: true,
+         skills : {
+        html: true,
+        js: true,
     },
+    },
+    adress: [
+        'Russia',
+        'Taganrog',
+    ]
   };
-
+  
 function deepCloneObjectOne(object) {
     return structuredClone(object);
 };
 
-function deepCloneObject(object) {
+function deepCloneObject(element) {
 
-    let cloneObject;
-    let prop;
+    if (typeof (element) !== 'object' || element === null ) return element;
 
-    if (typeof object !== 'object' || typeof object === null) return object;
+    let cloneObject = Array.isArray(element) ? [] : {};
 
-    cloneObject = Array.isArray(object) ? [] : {};
-
-    for (key in object) {
-
-        prop = object[key];
-
-        cloneObject[key] = deepCloneObject(prop);
+    for (key in element) {
+      cloneObject[key] = deepCloneObject(element [key]);
     }
-
     return cloneObject;
 };
-
   
-deepCloneObject(intern);
- */
+const a = deepCloneObject(intern);
+delete intern.name;
+console.log(a);
+console.log(intern);
+console.log(a.skills === intern.skills);
+
 
 /* 1) Написать рекурсивную функцию возведения в степень. На вход принимать число и его степень, на выходе выдавать рассчитанное значение. */
 
@@ -51,7 +55,7 @@ if (n == 1 ) {
 } else {
     return a * getPow(a, n - 1);
 }
-}
+};
 
 console.log(getPow(2,3));
 

@@ -17,12 +17,14 @@
 
         const isCheckFirstElem = (val.at(0) === array[index + 1].at(0));
         const isCheckLastElem = (val.at(-1) === array[index + 1].at(-1));
+        // true | false
+         acc.push(isCheckFirstElem && isCheckLastElem)
 
-        if (isCheckFirstElem && isCheckLastElem) {
-            acc.push(true);
-        } else {
-            acc.push(false)
-        }
+        // if (isCheckFirstElem && isCheckLastElem) {
+        //     acc.push(true);
+        // } else {
+        //     acc.push(false)
+        // }
         return acc;
     }, [])
 }
@@ -36,3 +38,22 @@ checkString(["asd", "afffd", "cc", "kk"]); */
 Например: [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]] => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] */
 
 
+/* function getFlat(array) {
+
+  let resArr = [];
+
+  array.forEach(element => {
+
+    if(Array.isArray(element)) {
+        resArr = resArr.concat(getFlat(element))
+    } else {
+        resArr.push(element);
+    }
+  });
+  return resArr;
+}
+
+console.log(
+getFlat([1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]])); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+
+console.log(getFlat('string')) */
