@@ -106,7 +106,6 @@ read() запрашивает два значения при помощи prompt
 sum() возвращает сумму этих свойств.
 mul() возвращает произведение этих свойств. */
 
-
 /*   function Calculator() {
     this.read = function() {
         this.a = +prompt('a?', '');
@@ -149,7 +148,6 @@ mul() возвращает произведение этих свойств. */
   accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
 
   alert(accumulator.value) */
-
 
 // 5.2 ЧИСЛА //
 
@@ -200,7 +198,6 @@ readNumber(); */
 /* Создайте функцию truncate(str, maxlength), которая проверяет длину строки str и,
 если она превосходит maxlength, заменяет конец str на "…", так, чтобы её длина стала равна maxlength. */
 
-
 /*   function truncate(str, maxlength) {
       return ( str.length > maxlength ) ? str.substr(0,[maxlength - 1]) + "…" : str;
      } */
@@ -212,7 +209,7 @@ readNumber(); */
 }
  */
 
-// 5.4 МАССИВЫ // 
+// 5.4 МАССИВЫ //
 
 /* !-- Давайте произведём 5 операций с массивом.
 
@@ -236,8 +233,6 @@ styles.unshift('Рэп','Регги')
 Просит пользователя ввести значения, используя prompt и сохраняет их в массив.
 Заканчивает запрашивать значения, когда пользователь введёт не числовое значение, пустую строку или нажмёт «Отмена».
 Подсчитывает и возвращает сумму элементов массива. */
-
-
 
 /* function sumInput() {
     let arr = [];
@@ -264,7 +259,6 @@ sumInput() */
 
 Функция getMaxSubSum(arr) должна возвращать эту сумму. */
 
-
 /* function getMaxSubSum(arr) {
   let currentKey;
 
@@ -288,7 +282,6 @@ sumInput() */
 console.log( getMaxSubSum([-1, 2, 3, -9]) ); // 5 */
 
 /* !-- Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString». */
-
 
 /*   function camelize(str) {
 
@@ -355,7 +348,6 @@ console.log( arr ); // 8, 5, 2, 1, -10 */
 
 Создайте функцию copySorted(arr), которая будет возвращать такую копию. */
 
-
 /* let arr = ["HTML", "JavaScript", "CSS"];
 let sorted = copySorted(arr);
 
@@ -379,8 +371,6 @@ let names = users.map(user => user.name);
 
 alert( names ); // Вася, Петя, Маша */
 
-
-
 /* ! --- У вас есть массив объектов user, и у каждого из объектов есть name, surname и id.
 
 Напишите код, который создаст ещё один массив объектов с параметрами id и fullName, где fullName – состоит из name и surname. */
@@ -399,7 +389,6 @@ let usersMapped = users.map( user => ({
 alert( usersMapped[0].id ) // 1
 alert( usersMapped[0].fullName ) // Вася Пупкин */
 
-
 /* Напишите функцию getAverageAge(users), которая принимает массив объектов со свойством age и возвращает средний возраст. */
 
 /* let vasya = { name: "Вася", age: 25 };
@@ -413,7 +402,6 @@ return arr.reduce((sum, user, ) => (sum + user.age),0) / arr.length;
 }
 
 alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28 */
-
 
 /* ! -- Напишите функцию unique(arr), которая возвращает массив, содержащий только уникальные элементы arr. */
 
@@ -437,9 +425,6 @@ function unique(arr) {
 
 
 alert(unique(strings)); // кришна, харе, :-O */
-
-
-
 
 /* function unique(arr) { // Решение коллег интернов
 let newArr = {};
@@ -474,7 +459,6 @@ function groupById(arr) {
 }
 
 let usersById = groupById(users); */
-
 
 // 5.9 OBJECT.KEYS, VALUES, ENTRIES //
 
@@ -521,8 +505,6 @@ alert( count(user) ); // 2 */
 /* function count(obj) {
   return Object.keys(obj).length;  // Решение из учебника
 } */
-
-
 
 // 5.10 ДЕСТРУКТУРИРУЮЩЕЕ ПРИСВАИВАНИЕ //
 
@@ -585,7 +567,6 @@ alert (date); */
 /* В Европейских странах неделя начинается с понедельника (день номер 1), затем идёт вторник (номер 2) и так до воскресенья (номер 7).
 Напишите функцию getLocalDay(date), которая возвращает «европейский» день недели для даты date. */
 
-
 /* function getLocalDay(date) {
 
 let day = date.getDay();
@@ -610,7 +591,6 @@ let day = date.getDay();
 JSON.stringify(user)
 
 let user2 = JSON.parse(JSON.stringify(user)); */
-
 
 // 6.1 РЕКУРСИЯ И СТЕК //
 
@@ -647,10 +627,7 @@ let user2 = JSON.parse(JSON.stringify(user)); */
   }
    */
 
-
-
 /* ! -- Задача – написать функцию factorial(n), которая возвращает n!, используя рекурсию. */
-
 
 /* function factorial(n) {
 
@@ -678,8 +655,6 @@ alert( factorial(5) ); // 120 */
 alert(fib(3)); // 2
 alert(fib(7)); // 13
 alert(fib(77)); // 5527939700884757 */
-
-
 
 /* !-- Напишите функцию sum, которая работает таким образом: sum(a)(b) = a+b.*/
 
@@ -717,7 +692,6 @@ let army = makeArmy();
 army[0](); // 10 от стрелка с порядковым номером 0
 army[1](); // 10 от стрелка с порядковым номером 1
 army[2](); // 10 ...и т.д. */
-
 
 // 6.8 ПЛАНИРОВАНИЕ: SETTIMEOUT И SETINTERVAL //
 
@@ -776,9 +750,7 @@ alert( err.stack ); // stack
 alert( err instanceof FormatError ); // true
 alert( err instanceof SyntaxError ); // true (потому что наследует от SyntaxError) */
 
-
-// 11.2 ПРОМИСЫ // 
-
+// 11.2 ПРОМИСЫ //
 
 /* !-- Функция delay(ms) должна возвращать промис, который перейдёт в состояние «выполнен» через ms миллисекунд, так чтобы мы могли добавить к нему .then: */
 
@@ -791,9 +763,8 @@ alert( err instanceof SyntaxError ); // true (потому что наследу
 }
 
 delay(3000).then(() => alert('выполнилось через 3 секунды')); */
- 
-/* !-- Переписать на промисы функуцию  */
 
+/* !-- Переписать на промисы функуцию  */
 
 /* function go() {
   showCircle(150, 150, 100, div => {
@@ -833,7 +804,6 @@ showCircle(150, 150, 100).then(div => {
 });
  */
 
-
 /* async function f() {
   return 1;
 }
@@ -871,9 +841,8 @@ loadJson('no-such-user.json') // (3)
   
   loadJson('no-such-user.json') // (3)
     .catch(alert); // Error: 404 */
-  
 
-//    14.1 PROXY // 
+//    14.1 PROXY //
 
 /* !-- Напишите функцию wrap(target), которая берёт объект target и возвращает прокси, добавляющий в него этот аспект функциональности. */
 
@@ -897,7 +866,6 @@ user = wrap(user);
 
 alert(user.name); // John
 alert(user.age); // Ошибка: такого свойства не существует */
-
 
 /* function switchItUp(number){
   let words = [
@@ -930,10 +898,7 @@ alert(user.age); // Ошибка: такого свойства не сущес�
 
   console.log(invert([1,2,3,4,5])); */
 
-
-  
-//  БРАУЗЕР: ДОКУМЕНТ, СОБЫТИЯ, ИНТЕРФЕЙСЫ  //  
-
+//  БРАУЗЕР: ДОКУМЕНТ, СОБЫТИЯ, ИНТЕРФЕЙСЫ  //
 
 // получаем координаты элемента в контексте документа
 
@@ -947,3 +912,180 @@ alert(user.age); // Ошибка: такого свойства не сущес�
     left: box.left + window.pageXOffset
   };
 } */
+
+/* !-- Спрячьте сообщения с помощью делегирования --! */
+
+// container.onclick = function (event) {
+//   if (event.target.className != "remove-button") return;
+
+//   let pane = event.target.closest(".pane");
+//   pane.remove();
+// };
+
+/* Создайте дерево, которое по клику на заголовок скрывает-показывает потомков: */
+
+/* const list = document.querySelector(".tree");
+
+for (let li of tree.querySelectorAll("li")) {
+  let span = document.createElement("span");
+  li.prepend(span);
+  span.append(span.nextSibling);
+}
+
+list.addEventListener("click", (event) => {
+  if (event.target.tagName !== "SPAN") {
+    return;
+  }
+  let childrenContainer = event.target.parentNode.querySelector("ul");
+  if (!childrenContainer) return;
+
+  childrenContainer.hidden = !childrenContainer.hidden;
+}); */
+
+/* Сортировка таблицы // TODO Сделать на выходных*/
+
+// const table = document.getElementById("grid");
+
+// table.addEventListener("click", (event) => {
+//   let tbody = grid.querySelector("tbody");
+
+//   if (event.target.dataset.type === "number") {
+//     let arrAge = Array.from(tbody.rows);
+//     console.log(arrAge);
+//   }
+// });
+
+/* !-- Напишите JS-код, реализующий поведение «подсказка». */
+
+let toolTip;
+const buttonTooltip = document.querySelector(".button-sumbit");
+
+buttonTooltip.addEventListener("mouseover", (e) => {
+  let target = e.target;
+  let toolTipHtml = target.dataset.tooltip;
+  if (!toolTipHtml) {
+    return;
+  }
+
+  toolTipElem = document.createElement("div");
+  toolTipElem.classList.add("tooltip");
+  toolTipElem.innerHTML = toolTipHtml;
+  document.body.append(toolTipElem);
+
+  let cords = target.getBoundingClientRect();
+
+  let left = cords.left + (target.offsetWidth - toolTipElem.offsetWidth) / 2;
+
+  if (left < 0) left = 0;
+  let top = cords.top - toolTipElem.offsetHeight - 5;
+
+  if (top < 0) {
+    top = cords.top + target.offsetHeight + 5;
+  }
+
+  toolTipElem.style.left = left + "px";
+  toolTipElem.style.top = top + "px";
+});
+
+buttonTooltip.addEventListener("mouseout", (e) => {
+  if (toolTipElem) {
+    toolTipElem.remove();
+    toolTipElem = null;
+  }
+});
+
+/*  !-- Сделайте так, чтобы при клике на ссылки внутри элемента id="contents"
+ пользователю выводился вопрос о том, действительно ли он хочет покинуть страницу, и если он не хочет, то прерывать переход по ссылке. */
+
+let contents = document.getElementById("contents");
+
+contents.addEventListener("click", (e) => {
+  let elem = e.target.closest("a");
+
+  if (elem === null) {
+    return;
+  }
+
+  if (!elem.getAttribute("href")) {
+    e.preventDefault();
+    elem = elem.parentNode;
+  }
+
+  let res = confirm(`Перейти на ${elem.getAttribute("href")} ?`);
+
+  if (res === false) {
+    e.preventDefault();
+    return;
+  }
+});
+
+/* Создайте список, в котором элементы могут быть выделены, как в файловых менеджерах. */
+
+const list = document.getElementById("ul");
+
+list.addEventListener("click", (event) => {
+  if (event.target.tagName !== "LI") {
+    return;
+  }
+
+  if (event.ctrlKey || event.metaKey) {
+    addSelect(event.target);
+    return;
+  }
+
+  singleSelect(event.target);
+});
+
+function addSelect(li) {
+  li.classList.toggle("selected");
+}
+
+function singleSelect(li) {
+  let selected = ul.querySelectorAll(".selected");
+  for (let elem of selected) {
+    if( elem !== li) {
+    elem.classList.remove("selected");
+    }
+  }
+  li.classList.toggle("selected");
+  return;
+}
+
+ul.onmousedown = function () {
+  return false;
+};
+
+/* !-- Создайте слайдер:
+Слайдер должен нормально работать при резком движении мыши влево или вправо за пределы полосы. 
+При этом бегунок должен останавливаться чётко в нужном конце полосы.
+При нажатом бегунке мышь может выходить за пределы полосы слайдера, но слайдер пусть всё равно работает (это удобно для пользователя). */
+
+const thumb = document.querySelector(".thumb");
+
+
+
+thumb.addEventListener('mousedown', (event) => {
+  event.preventDefault();
+
+  let shiftX = event.clientX + thumb.getBoundingClientRect().left;;
+  
+  console.log(shiftX);
+  
+
+  moveAT(event.pageX);
+
+  function moveAT(pageX) {
+    thumb.style.left = pageX - shiftX + 'px';
+  };
+
+  document.body.addEventListener('mousemove', mouseSlide);
+
+  function mouseSlide(event) {
+    moveAT(event.pageX);
+  };
+
+  document.body.addEventListener ('mouseup', () => {
+      document.body.removeEventListener('mousemove', mouseSlide);
+  })
+});
+ 
